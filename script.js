@@ -71,3 +71,38 @@ axios
   .catch(error => {
     console.error("Error fetching data:", error);
   });
+
+axiosInstance
+  .post("/posts", {
+    title: "foo",
+    body: "bar",
+    userId: 1,
+  })
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.error("Error posting data:", error);
+  });
+
+axiosInstance
+  .put("/posts/1", {
+    title: "bar",
+    body: "foo",
+    userId: 1,
+  })
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.error("Error updating data:", error);
+  });
+
+axiosInstance
+  .delete("/posts/1")
+  .then(response => {
+    console.log("Deleted:", response.data);
+  })
+  .catch(error => {
+    console.error("Error deleting data:", error);
+  });

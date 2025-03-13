@@ -658,6 +658,29 @@ axiosInstance.get("/posts").then((response)=>{
 }).catch((error)=>{
     console.error("Error fetching data:", error);
 });
+axiosInstance.post("/posts", {
+    title: "foo",
+    body: "bar",
+    userId: 1
+}).then((response)=>{
+    console.log(response.data);
+}).catch((error)=>{
+    console.error("Error posting data:", error);
+});
+axiosInstance.put("/posts/1", {
+    title: "bar",
+    body: "foo",
+    userId: 1
+}).then((response)=>{
+    console.log(response.data);
+}).catch((error)=>{
+    console.error("Error updating data:", error);
+});
+axiosInstance.delete("/posts/1").then((response)=>{
+    console.log("Deleted:", response.data);
+}).catch((error)=>{
+    console.error("Error deleting data:", error);
+});
 
 },{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
